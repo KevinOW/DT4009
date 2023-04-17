@@ -1,0 +1,151 @@
+###############################################################################
+#
+# IAR ELF Linker V9.32.2.340/W64 for ARM                  18/Apr/2023  00:57:44
+# Copyright 2007-2023 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\Exe\Lab1_2.out
+#    Map file     =
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\List\Lab1_2.map
+#    Command line =
+#        -f
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\Exe\Lab1_2.out.rsp
+#        (C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\Obj\asm.o
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\Obj\startup_sam3x.o
+#        --no_out_extension -o
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\Exe\Lab1_2.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\List\Lab1_2.map
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.1\arm\config\linker\Microchip\sam3x8\sram.icf" --semihosting
+#        --no_library_search --entry __iar_program_start --vfe --text_out
+#        locale --cpu=Cortex-M3 --fpu=None)
+#
+###############################################################################
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x2007'0000 { ro section .intvec };
+"P1":  place in [from 0x2007'0000 to 0x2008'7fff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2007'0000 to 0x2008'7fff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P1-P2"
+
+
+  Section  Kind         Address   Size  Object
+  -------  ----         -------   ----  ------
+"A0":                             0xf4
+  .intvec  ro code  0x2007'0000   0xf4  startup_sam3x.o [1]
+                  - 0x2007'00f4   0xf4
+
+"P1-P2":                         0x200
+  .text    ro code  0x2007'00f4  0x1cc  startup_sam3x.o [1]
+  .text    ro code  0x2007'02c0   0x34  asm.o [1]
+                  - 0x2007'02f4  0x200
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+  0x2007'02f4  0x2008'7fff  0x1'7d0c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module           ro code
+    ------           -------
+command line/config:
+    ------------------------
+    Total:
+
+C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\Obj: [1]
+    asm.o                 52
+    startup_sam3x.o      704
+    ------------------------
+    Total:               756
+
+----------------------------
+    Grand Total:         756
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+ADC_Handler             0x2007'0203        Code  Wk  startup_sam3x.o [1]
+BusFault_Handler        0x2007'0107        Code  Wk  startup_sam3x.o [1]
+CAN0_Handler            0x2007'0227        Code  Wk  startup_sam3x.o [1]
+CAN1_Handler            0x2007'022d        Code  Wk  startup_sam3x.o [1]
+DACC_Handler            0x2007'0209        Code  Wk  startup_sam3x.o [1]
+DMAC_Handler            0x2007'020f        Code  Wk  startup_sam3x.o [1]
+EEFC0_Handler           0x2007'0149        Code  Wk  startup_sam3x.o [1]
+EEFC1_Handler           0x2007'014f        Code  Wk  startup_sam3x.o [1]
+EMAC_Handler            0x2007'0221        Code  Wk  startup_sam3x.o [1]
+HSMCI_Handler           0x2007'01a3        Code  Wk  startup_sam3x.o [1]
+HardFault_Handler       0x2007'00fb        Code  Wk  startup_sam3x.o [1]
+MemoryManagementFault_Handler
+                        0x2007'0101        Code  Wk  startup_sam3x.o [1]
+NMI_Handler             0x2007'00f5        Code  Wk  startup_sam3x.o [1]
+PIOA_Handler            0x2007'0167        Code  Wk  startup_sam3x.o [1]
+PIOB_Handler            0x2007'016d        Code  Wk  startup_sam3x.o [1]
+PIOC_Handler            0x2007'0173        Code  Wk  startup_sam3x.o [1]
+PIOD_Handler            0x2007'0179        Code  Wk  startup_sam3x.o [1]
+PIOE_Handler            0x2007'017f        Code  Wk  startup_sam3x.o [1]
+PIOF_Handler            0x2007'0185        Code  Wk  startup_sam3x.o [1]
+PMC_Handler             0x2007'0143        Code  Wk  startup_sam3x.o [1]
+PWM_Handler             0x2007'01fd        Code  Wk  startup_sam3x.o [1]
+PendSV_Handler          0x2007'0119        Code  Wk  startup_sam3x.o [1]
+RSTC_Handler            0x2007'012b        Code  Wk  startup_sam3x.o [1]
+RTC_Handler             0x2007'0131        Code  Wk  startup_sam3x.o [1]
+RTT_Handler             0x2007'0137        Code  Wk  startup_sam3x.o [1]
+SDRAMC_Handler          0x2007'0161        Code  Wk  startup_sam3x.o [1]
+SMC_SDRAMC_Handler      0x2007'015b        Code  Wk  startup_sam3x.o [1]
+SPI0_Handler            0x2007'01b5        Code  Wk  startup_sam3x.o [1]
+SPI1_Handler            0x2007'01bb        Code  Wk  startup_sam3x.o [1]
+SSC_Handler             0x2007'01c1        Code  Wk  startup_sam3x.o [1]
+SUPC_Handler            0x2007'0125        Code  Wk  startup_sam3x.o [1]
+SVCall_Handler          0x2007'0113        Code  Wk  startup_sam3x.o [1]
+SysTick_Handler         0x2007'011f        Code  Wk  startup_sam3x.o [1]
+TC0_Handler             0x2007'01c7        Code  Wk  startup_sam3x.o [1]
+TC1_Handler             0x2007'01cd        Code  Wk  startup_sam3x.o [1]
+TC2_Handler             0x2007'01d3        Code  Wk  startup_sam3x.o [1]
+TC3_Handler             0x2007'01d9        Code  Wk  startup_sam3x.o [1]
+TC4_Handler             0x2007'01df        Code  Wk  startup_sam3x.o [1]
+TC5_Handler             0x2007'01e5        Code  Wk  startup_sam3x.o [1]
+TC6_Handler             0x2007'01eb        Code  Wk  startup_sam3x.o [1]
+TC7_Handler             0x2007'01f1        Code  Wk  startup_sam3x.o [1]
+TC8_Handler             0x2007'01f7        Code  Wk  startup_sam3x.o [1]
+TRNG_Handler            0x2007'021b        Code  Wk  startup_sam3x.o [1]
+TWI0_Handler            0x2007'01a9        Code  Wk  startup_sam3x.o [1]
+TWI1_Handler            0x2007'01af        Code  Wk  startup_sam3x.o [1]
+UART_Handler            0x2007'0155        Code  Wk  startup_sam3x.o [1]
+UOTGHS_Handler          0x2007'0215        Code  Wk  startup_sam3x.o [1]
+USART0_Handler          0x2007'018b        Code  Wk  startup_sam3x.o [1]
+USART1_Handler          0x2007'0191        Code  Wk  startup_sam3x.o [1]
+USART2_Handler          0x2007'0197        Code  Wk  startup_sam3x.o [1]
+USART3_Handler          0x2007'019d        Code  Wk  startup_sam3x.o [1]
+UsageFault_Handler      0x2007'010d        Code  Wk  startup_sam3x.o [1]
+WDG_Handler             0x2007'013d        Code  Wk  startup_sam3x.o [1]
+__iar_program_start     0x2007'0239        Code  Gb  startup_sam3x.o [1]
+main                    0x2007'02c1        Code  Gb  asm.o [1]
+
+
+[1] = C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_2\Debug\Obj
+
+  756 bytes of readonly  code memory
+
+Errors: none
+Warnings: none

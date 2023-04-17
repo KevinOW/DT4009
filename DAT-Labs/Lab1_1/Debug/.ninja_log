@@ -1,0 +1,10 @@
+# ninja log v5
+8	32	7034483417703332	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Obj/asm.o	7c723e5e1e5accbb
+0	40	7034483417802668	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Obj/startup_sam3x.o	f3f739308bbeb3f7
+44	193	7034483419153147	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Exe/Lab1_1.out	5b67593e39e06333
+0	21	7034487484180700	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Obj/asm.o	7c723e5e1e5accbb
+22	58	7034487484517838	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Exe/Lab1_1.out	5b67593e39e06333
+0	20	7034524956208815	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Obj/asm.o	7c723e5e1e5accbb
+22	73	7034524956712087	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Exe/Lab1_1.out	5b67593e39e06333
+0	21	7034668090708768	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Obj/asm.o	7c723e5e1e5accbb
+23	61	7034668091077766	C:/Users/kevin/OneDrive/Skrivbord/Datorteknik/DAT-Labs/Lab1_1/Debug/Exe/Lab1_1.out	5b67593e39e06333
