@@ -8,7 +8,7 @@ main
         MOV R1, #0              ; (R1) <- 0
         MOV R2, #0              ; (R2) <- 0
 
-        MOV R3, #999            ; (R3) <- 999 in decimal
+        MOV R3, #999            ; (R3) <- 999
 
 LOOP    CMP R0, R3             ; compare (R0) to 999
         BEQ STOP               ; equal -> jump to STOP

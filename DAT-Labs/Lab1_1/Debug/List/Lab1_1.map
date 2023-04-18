@@ -1,22 +1,22 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.32.2.340/W64 for ARM                  17/Apr/2023  22:33:29
+# IAR ELF Linker V9.32.2.340/W64 for ARM                  18/Apr/2023  14:49:24
 # Copyright 2007-2023 IAR Systems AB.
 #
 #    Output file  =
-#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\Exe\Lab1_1.out
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\Exe\Lab1_1.out
 #    Map file     =
-#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\List\Lab1_1.map
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\List\Lab1_1.map
 #    Command line =
 #        -f
-#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\Exe\Lab1_1.out.rsp
-#        (C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\Obj\asm.o
-#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\Obj\startup_sam3x.o
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\Exe\Lab1_1.out.rsp
+#        (C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\Obj\asm.o
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\Obj\startup_sam3x.o
 #        --no_out_extension -o
-#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\Exe\Lab1_1.out
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\Exe\Lab1_1.out
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map
-#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\List\Lab1_1.map
+#        C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\List\Lab1_1.map
 #        --config "C:\Program Files\IAR Systems\Embedded Workbench
 #        9.1\arm\config\linker\Microchip\sam3x8\sram.icf" --semihosting
 #        --no_library_search --entry __iar_program_start --vfe --text_out
@@ -69,7 +69,7 @@ command line/config:
     ------------------------
     Total:
 
-C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\Obj: [1]
+C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\Obj: [1]
     asm.o                 32
     startup_sam3x.o      704
     ------------------------
@@ -143,7 +143,7 @@ __iar_program_start     0x2007'0239        Code  Gb  startup_sam3x.o [1]
 main                    0x2007'02c1        Code  Gb  asm.o [1]
 
 
-[1] = C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DAT-Labs\Lab1_1\Debug\Obj
+[1] = C:\Users\kevin\OneDrive\Skrivbord\Datorteknik\DT4009\DAT-Labs\Lab1_1\Debug\Obj
 
   736 bytes of readonly  code memory
 

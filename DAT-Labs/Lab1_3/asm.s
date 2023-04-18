@@ -1,73 +1,61 @@
-        NAME main
-        PUBLIC main
-        SECTION .text: CODE (2)
-        THUMB
+  NAME main
+  PUBLIC main
+  SECTION .text: CODE (2)
+  THUMB
 
 main
-        ; Initialize variables
-        MOVS R5, #0     ; Sum of all elements
-        LDR R6, =999    ; Minimum value (initialize to large number)
-        LDR R7, =0      ; Maximum value (initialize to small number)
-        LDR R0, =Vector ; Address of first element in vector
-        LDR R1, =20     ; Number of elements in vector
-
+  ; Initialize variables
+  LDR R1, =Vector     ; Load the address of the vector
+  MOV R6, #0x999      ; Initialize R6 with the largest possible value
+  MOV R7, #0          ; Initialize R7 with 0
+  MOV R8, #0          ; Initialize R8 with 0
+  MOV R9, #20         ; Initialize R9 with the length of the vector
+  
+  ; Loop through the vector
 loop
-       ; Load current element into R2
-        LDR R2, [R0], #4
+  LDR R2, [R1], #4    ; Load the next element of the vector
+  CMP R2, R6          ; Check if the current element is less than R6
+  IT LT               ; Conditionally execute the next instruction if less than
+  MOVLT R6, R2        ; If so, update R6 with the new minimum value
+  CMP R2, R7          ; Check if the current element is greater than R7
+  IT GT               ; Conditionally execute the next instruction if greater than
+  MOVGT R7, R2        ; If so, update R7 with the new maximum value
+  ADD R8, R8, R2      ; Add the current element to R8
+  SUBS R9, R9, #1     ; Decrement the loop counter
+  BNE loop            ; If R9 is not zero, continue the loop
+  
+  ; Calculate the average
+  MOV R2, #20         ; Load the length of the vector into R2
+  MOV R3, #0          ; Initialize R3 with 0
+  MOV R4, R8          ; Copy the sum into R4
+  CMP R2, #0          ; Check if the length of the vector is zero
+  BEQ STOP            ; If so, skip the division
+  MOV R0, R4          ; Copy the sum into R0
+  MOV R1, R2          ; Copy the length of the vector into R1
+  BL unsigned_divide  ; Call the unsigned_divide function to divide R0 by R1
+  MOV R3, R0          ; Copy the result into R3
+  
+STOP    B STOP              ; Stop the program
 
-        ; Update minimum value if necessary
-        CMP R2, R6
-        BLT update_min
+; unsigned_divide function
+unsigned_divide
+  PUSH {R4, LR}       ; Save the current value of R4 and LR on the stack
+  MOV R3, #0          ; Initialize R3 with 0
+  DIVLOOP:
+    CMP R0, R1        ; Check if R0 is less than R1
+    BLO DIVEND        ; If so, end the division loop
+    ADD R3, R3, #1    ; Increment the quotient
+    SUB R0, R0, R1    ; Subtract R1 from R0
+    B DIVLOOP         ; Continue the division loop
+  DIVEND:
+    POP {R4, PC}      ; Restore the original value of R4 and LR and return
 
-        ; Update maximum value if necessary
-        CMP R2, R7
-        BGT update_max
 
-        ; Add current element to sum
-        ADDS R5, R5, R2
-
-        ; Decrement loop counter
-        SUBS R1, R1, #1
-
-        ; Continue loop if more elements remain
-        BNE loop
-
-        ; Calculate average value
-        MOV R8, R5     ; Copy sum to R8
-        MOV R9, #20    ; Number of elements (could be calculated based on size of Vector)
-        BL divu        ; R8 = R8 / R9
-
-STOP    B STOP         ; Stop program (infinite loop)
-
-update_min
-       ; Update minimum value
-       MOV R6, R2
-       B loop
-
-update_max
-       ; Update maximum value
-       MOV R7, R2
-       B loop
-divu
-       ; Unsigned integer division (R0 / R1)
-       ; Assumes R1 > 0 and result fits in 32 bits
-       PUSH {LR}       ; Save return address
-       MOV R2, #0      ; Initialize quotient to zero
-divu_loop
-       CMP R0, R1      ; Compare dividend and divisor
-       BLT divu_end    ; End of division if dividend < divisor
-       ADD R2, R2, #1  ; Increment quotient
-       SUB R0, R0, R1  ; Subtract divisor from dividend
-       B divu_loop     ; Continue division
-divu_end
-       MOV R0, R2      ; Return quotient in R0
-       POP {PC}        ; Restore return address and return
-
-       ALIGNROM 2
-       DATA
+    ALIGNROM 2
+    DATA
 Vector
-       DC32 14, 25, 2, 27, 3
-       DC32 22, 13, 4, 24, 6
-       DC32 26, 18, 8, 15, 9
-       DC32 28, 10, 7, 17, 5
-       END
+    DC32 14, 25, 2, 27, 3
+    DC32 22, 13, 4, 24, 6
+    DC32 26, 18, 8, 15, 9
+    DC32 28, 10, 7, 17, 5
+    END
