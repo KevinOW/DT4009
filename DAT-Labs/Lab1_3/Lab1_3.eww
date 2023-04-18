@@ -4,10 +4,10 @@
         <path>$WS_DIR$\..\Lab1_1\Lab1_1.ewp</path>
     </project>
     <project>
-        <path>$WS_DIR$\Lab1_2.ewp</path>
+        <path>$WS_DIR$\..\Lab1_2\Lab1_2.ewp</path>
     </project>
     <project>
-        <path>$WS_DIR$\..\Lab1_3\Lab1_3.ewp</path>
+        <path>$WS_DIR$\Lab1_3.ewp</path>
     </project>
     <batchBuild />
 </workspace>
