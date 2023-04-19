@@ -37,7 +37,6 @@ loop
   
 STOP    B STOP              ; Stop the program
 
-; unsigned_divide function
 unsigned_divide
   PUSH {R4, LR}       ; Save the current value of R4 and LR on the stack
   MOV R3, #0          ; Initialize R3 with 0
